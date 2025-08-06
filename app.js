@@ -2,7 +2,7 @@
 let listAmigos = [];
 
 function adicionarAmigo(){
-    let nomeAmigos = document.getElementById('amigo').value;
+    let nomeAmigos = estruturarNome(document.getElementById('amigo').value);
     if(listAmigos.includes(nomeAmigos)){
         alert(`Nome "${nomeAmigos}" já adiconado, incluir outro!`);
         limparCampo();
@@ -17,6 +17,7 @@ function adicionarAmigo(){
 }
 
 function sortearAmigo(){
+    embaralhaLista(listAmigos);
     let numeroSoteado = numeroAleatorio();
     if(listAmigos.length == 0 || listAmigos.length < 2){
         alert('Não possui amigos secretos suficientes, adicionar!');
@@ -51,4 +52,22 @@ function numeroAleatorio(){
 function finalizarJogo(){
     listAmigos = [];
     document.getElementById('listaAmigos').innerHTML = '';
+}
+
+function embaralhaLista(lista) {
+    for (let indice = lista.length; indice; indice--) {
+        const indiceAleatorio = Math.floor(Math.random() * indice);
+        // atribuição via destructuring
+        [lista[indice - 1], lista[indiceAleatorio]] = 
+            [lista[indiceAleatorio], lista[indice - 1]];
+    }
+}
+
+function estruturarNome(nome){
+    return nome
+        .trim()
+        .toLowerCase()
+        .split(' ')
+        .map(palavra => palavra.charAt(0).toUpperCase() + palavra.slice(1))
+        .join(' ');
 }
