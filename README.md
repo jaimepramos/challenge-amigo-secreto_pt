@@ -13,8 +13,8 @@ Uma aplicação simples e divertida para sortear amigos secretos de forma aleat�
 ## 💻 Tecnologias
 
 - HTML
-- CSS *(opcional, para estilização futura)*
-- JavaScript puro (Vanilla JS)
+- CSS
+- JavaScript
 
 ## 🚀 Como usar
 
