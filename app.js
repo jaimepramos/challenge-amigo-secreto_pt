@@ -18,10 +18,14 @@ function adicionarAmigo(){
 
 function sortearAmigo(){
     let numeroSoteado = numeroAleatorio();
-    let mensagemSorteado = `O amigo secreto sorteado é: ${listAmigos[numeroSoteado]}`;
-    let nomeSorteado = document.getElementById('resultado');
-    nomeSorteado.innerHTML = mensagemSorteado;
-    finalizarJogo();
+    if(listAmigos.length == 0){
+        alert('Não possui amigos secretos, adiconar!');
+    }else{
+        let mensagemSorteado = `O amigo secreto sorteado é: ${listAmigos[numeroSoteado]}`;
+        let nomeSorteado = document.getElementById('resultado');
+        nomeSorteado.innerHTML = mensagemSorteado;
+        finalizarJogo();
+    }
 }
 
 function atualizarLista(){
