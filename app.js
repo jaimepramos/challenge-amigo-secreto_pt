@@ -18,8 +18,8 @@ function adicionarAmigo(){
 
 function sortearAmigo(){
     let numeroSoteado = numeroAleatorio();
-    if(listAmigos.length == 0){
-        alert('Não possui amigos secretos, adiconar!');
+    if(listAmigos.length == 0 || listAmigos.length < 2){
+        alert('Não possui amigos secretos suficientes, adicionar!');
     }else{
         let mensagemSorteado = `O amigo secreto sorteado é: ${listAmigos[numeroSoteado]}`;
         let nomeSorteado = document.getElementById('resultado');
